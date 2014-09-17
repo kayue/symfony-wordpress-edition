@@ -76,21 +76,11 @@ swiftmailer:
     spool:     { type: memory }
 
 kayue_wordpress:
-    # Site URL must match *EXACTLY* with WordPress's setting. Can be found
-    # on the Settings > General screen, there are field named "WordPress Address"
     site_url:       'http://localhost/wordpress'
-#    connection:     wordpress
 
     # Logged in key and salt. Can be found in the wp-config.php file.
     logged_in_key:  ':j$_=(:l@8Fku^U;MQ~#VOJXOZcVB_@u+t-NNYqmTH4na|)5Bhs1|tF1IA|>tz*E'
     logged_in_salt: ')A^CQ<R:1|^dK/Q;.QfP;U!=J=(_i6^s0f#2EIbGIgFN{,3U9H$q|o/sJfWF`NRM'
 
-    # Optional: WordPress cookie path / domain settings.
-    cookie_path:    '/'
-    cookie_domain:  null
-
-    # Optional: Custom table prefix. Default is "wp_".
     table_prefix:   'wp_'
-
-    # Optional: Entity manager configuration to use (cache etc). Default is 'default'.
     entity_manager: 'default'
