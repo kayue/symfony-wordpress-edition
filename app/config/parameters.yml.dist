@@ -12,6 +12,7 @@ parameters:
     wordpress_database_name:     wordpress
     wordpress_database_user:     %database_user%
     wordpress_database_password: %database_password%
+    wordpress_url:               http://localhost/symfony-wordpress-edition/web/wordpress
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
