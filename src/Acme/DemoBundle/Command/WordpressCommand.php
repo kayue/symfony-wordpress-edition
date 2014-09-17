@@ -61,6 +61,10 @@ class WordpressCommand extends ContainerAwareCommand
 
         $this->runCommand('php wp-cli.phar import wptest.xml --authors=create --skip=attachment');
 
+        $this->runCommand('php wp-cli.phar core multisite-convert');
+        $this->runCommand('php wp-cli.phar site create --slug=foo');
+        $this->runCommand('php wp-cli.phar site create --slug=bar');
+
         return 0;
     }
 

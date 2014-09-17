@@ -2,14 +2,14 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony_wordpress
+    database_name:     symfony
     database_user:     root
     database_password: ~
 
     wordpress_database_driver:   %database_driver%
     wordpress_database_host:     %database_host%
     wordpress_database_port:     %database_port%
-    wordpress_database_name:     %database_name%
+    wordpress_database_name:     wordpress
     wordpress_database_user:     %database_user%
     wordpress_database_password: %database_password%
     wordpress_url:               http://localhost/symfony-wordpress-edition/web/wordpress
