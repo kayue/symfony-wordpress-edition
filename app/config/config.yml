@@ -42,16 +42,26 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   "%database_driver%"
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
-        charset:  UTF8
-        # if using pdo_sqlite as your database driver, add the path in parameters.yml
-        # e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        # path:     "%database_path%"
+        connections:
+            default:
+                driver:   "%database_driver%"
+                host:     "%database_host%"
+                port:     "%database_port%"
+                dbname:   "%database_name%"
+                user:     "%database_user%"
+                password: "%database_password%"
+                charset:  UTF8
+                # if using pdo_sqlite as your database driver, add the path in parameters.yml
+                # e.g. database_path: "%kernel.root_dir%/data/data.db3"
+                # path:     "%database_path%"
+            wordpress:
+                driver:   "%wordpress_database_driver%"
+                host:     "%wordpress_database_host%"
+                port:     "%wordpress_database_port%"
+                dbname:   "%wordpress_database_name%"
+                user:     "%wordpress_database_user%"
+                password: "%wordpress_database_password%"
+                charset:  UTF8
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -64,3 +74,23 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+kayue_wordpress:
+    # Site URL must match *EXACTLY* with WordPress's setting. Can be found
+    # on the Settings > General screen, there are field named "WordPress Address"
+    site_url:       'http://localhost/wordpress'
+#    connection:     wordpress
+
+    # Logged in key and salt. Can be found in the wp-config.php file.
+    logged_in_key:  ':j$_=(:l@8Fku^U;MQ~#VOJXOZcVB_@u+t-NNYqmTH4na|)5Bhs1|tF1IA|>tz*E'
+    logged_in_salt: ')A^CQ<R:1|^dK/Q;.QfP;U!=J=(_i6^s0f#2EIbGIgFN{,3U9H$q|o/sJfWF`NRM'
+
+    # Optional: WordPress cookie path / domain settings.
+    cookie_path:    '/'
+    cookie_domain:  null
+
+    # Optional: Custom table prefix. Default is "wp_".
+    table_prefix:   'wp_'
+
+    # Optional: Entity manager configuration to use (cache etc). Default is 'default'.
+    entity_manager: 'default'

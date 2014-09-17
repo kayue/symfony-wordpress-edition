@@ -6,6 +6,13 @@ parameters:
     database_user:     root
     database_password: ~
 
+    wordpress_database_driver:   %database_driver%
+    wordpress_database_host:     %database_host%
+    wordpress_database_port:     %database_port%
+    wordpress_database_name:     wordpress
+    wordpress_database_user:     %database_user%
+    wordpress_database_password: %database_password%
+
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
