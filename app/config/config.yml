@@ -54,6 +54,7 @@ doctrine:
                 # if using pdo_sqlite as your database driver, add the path in parameters.yml
                 # e.g. database_path: "%kernel.root_dir%/data/data.db3"
                 # path:     "%database_path%"
+                schema_filter: ~^(?!wp_)~
             wordpress:
                 driver:   "%wordpress_database_driver%"
                 host:     "%wordpress_database_host%"
