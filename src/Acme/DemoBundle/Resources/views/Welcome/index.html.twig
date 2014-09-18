@@ -9,10 +9,23 @@
 
     <p>Congratulations! You have successfully installed a new Symfony WordPress edition application.</p>
 
-    <h2>List Of All Posts</h2>
+    {{ wp_switch_blog(1) }}
+    <h2>{{ wp_find_one_option_by_name('blogname').value }}</h2>
 
     <ul>
-        {% for post in posts %}
+        {% for post in blog1 %}
+            <li>
+                <strong>{{ post.title }}</strong><br/>
+                by {{ post.user.displayName }} at {{ post.date|date('Y/m/d') }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {{ wp_switch_blog(2) }}
+    <h2>{{ wp_find_one_option_by_name('blogname').value }}</h2>
+
+    <ul>
+        {% for post in blog2 %}
             <li>
                 <strong>{{ post.title }}</strong><br/>
                 by {{ post.user.displayName }} at {{ post.date|date('Y/m/d') }}

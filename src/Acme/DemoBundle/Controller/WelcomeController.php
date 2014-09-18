@@ -9,11 +9,10 @@ class WelcomeController extends Controller
 {
     public function indexAction()
     {
-        $repo = $this->getWordpress()->getManager(1)->getRepository('KayueWordpressBundle:Post');
-        $repo = $this->getWordpress()->getManager(2)->getRepository('KayueWordpressBundle:Post');
-
         return $this->render('AcmeDemoBundle:Welcome:index.html.twig', [
-            'posts' => $repo->findBy(['type' => 'post'])
+            'blog1' => $this->getWordpress()->getManager()->getRepository('KayueWordpressBundle:Post')->findBy(['type' => 'post']),
+            'blog2' => $this->getWordpress()->getManager(2)->getRepository('KayueWordpressBundle:Post')->findBy(['type' => 'post']),
+            'blog3' => $this->getWordpress()->getManager(3)->getRepository('KayueWordpressBundle:Post')->findBy(['type' => 'post']),
         ]);
     }
 
